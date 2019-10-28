@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    size: "small"
+  }
+  state = {
+    num: 0,
+    likes: "likes"
+  }
+
+  buttonClick = (x) => {
+    this.setState ({
+      likes: (this.state.num === 0) ? "like" : "likes",
+      num: this.state.num + 1
+      })
+  }
+
+  render() {
+    return (
+        <button onClick={this.buttonClick}>{this.state.num} {this.state.likes}</button>
+    )
+  }
 }
 
-export default App;
+export default App
