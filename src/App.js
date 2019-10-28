@@ -1,9 +1,7 @@
 import React, { Component } from "react"
 
 class App extends Component {
-  state = {
-    size: "small"
-  }
+  
   state = {
     num: 0,
     likes: "likes"
